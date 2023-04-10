@@ -1,11 +1,14 @@
-const cells = document.querySelectorAll('td');
-let values = [];
+function generateTable() {
+  const inputValues = document.getElementById("input-values").value.split(",");
+  const cells = document.querySelectorAll('td');
 
-function generateBingoCard() {
-  const input = document.getElementById('words').value;
-  values = input.split(',').map(word => word.trim());
-  shuffle(values);
   for (let i = 0; i < cells.length; i++) {
-    cells[i].textContent = values[i];
-    cells[i].classList.remove('pressed');
-    cells[i
+    cells[i].textContent = inputValues[i];
+  }
+}
+
+document.querySelectorAll('td').forEach(cell => {
+  cell.addEventListener('click', () => {
+    cell.classList.toggle('active');
+  });
+});
