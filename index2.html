@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Bingo App</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="htwo">
-      <center><h2><font color="pink">Bingo App</font></h2></center>
-    </div>
-    <table>
-      <tr>
-        <td id="cell1"></td>
-        <td id="cell2"></td>
-        <td id="cell3"></td>
-      </tr>
-      <tr>
-        <td id="cell4"></td>
-        <td id="cell5"></td>
-        <td id="cell6"></td>
-      </tr>
-      <tr>
-        <td id="cell7"></td>
-        <td id="cell8"></td>
-        <td id="cell9"></td>
-      </tr>
-    </table>
-    <form>
-      <label for="words">Enter potential values (separated by commas):</label>
-      <input type="text" id="words" name="words">
-      <button type="button" onclick="generateBingoCard()">Generate</button>
-    </form>
-    <script src="script.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="htwo">
+    <center><h2><font color="pink">Bingo</font></h2></center>
+  </div>
+  <table>
+    <tr>
+      <td id="cell1"></td>
+      <td id="cell2"></td>
+      <td id="cell3"></td>
+    </tr>
+    <tr>
+      <td id="cell4"></td>
+      <td id="cell5"></td>
+      <td id="cell6"></td>
+    </tr>
+    <tr>
+      <td id="cell7"></td>
+      <td id="cell8"></td>
+      <td id="cell9"></td>
+    </tr>
+  </table>
+  <div>
+    <label for="input-values">Enter up to 9 comma-separated values:</label>
+    <input type="text" id="input-values" name="input-values">
+    <button onclick="generateTable()">Generate</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
