@@ -1,11 +1,9 @@
 <html>
   <head>
-  
-  
-  <style>
     
-    
-          body {
+    <style>
+      
+                body {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
@@ -40,37 +38,56 @@
         background-color: #0f0;
         box-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0, 0px 0px 40px #0f0, 0px 0px 70px #0f0;
       }
-    
+
+
+
+      
+      
     </style>
-  
+    
+    
   </head>
 
+
 <body>
-  
-  <center><h2>TwitterSpaces Bingo</h2></center>
-    <table>
-      <tr>
-        <td id="cell1">Danologue</td>
-        <td id="cell2">It is what it is</td>
-        <td id="cell3">I'm an Ally</td>
-      </tr>
-      <tr>
-        <td id="cell4">Well I'm Broken</td>
-        <td id="cell5">Talking Over ERich</td>
-        <td id="cell6">Troll</td>
-      </tr>
-      <tr>
-        <td id="cell7">Peter waxes philosophic</td>
-        <td id="cell8">AI Ethics</td>
-        <td id="cell9">Matios Joins</td>
-      </tr>
-    </table>
-  
-  
-<script>
-        var cells = document.querySelectorAll('td');
+  <div class="htwo">
+    <center><h2><font color="pink">The Syndicate - Bingo</font></h2></center>
+  </div>
+  <table>
+    <tr>
+      <td id="cell1"></td>
+      <td id="cell2"></td>
+      <td id="cell3"></td>
+    </tr>
+    <tr>
+      <td id="cell4"></td>
+      <td id="cell5"></td>
+      <td id="cell6"></td>
+    </tr>
+    <tr>
+      <td id="cell7"></td>
+      <td id="cell8"></td>
+      <td id="cell9"></td>
+    </tr>
+  </table>
+
+  <script>
+var cells =   
+    document.querySelectorAll('td');
+    var values = ['Danologue', 'IIWII', 'Ally', 'Talking Over ERich', 'Peter Waxes Philosphical', 'Well Im Broken', 'Matios Joins', 'Regulating AI', 'Overton Window'];
+    
+      cells.forEach(cell => {
+      cell.addEventListener('click', () => {
+        cell.classList.toggle('pressed');
+      });
+    });
+    
+    
+shuffle(values);
       
-      for (var i = 0; i < cells.length; i++) {
+for (var i = 0; i < cells.length; i++) {
+  cells[i].textContent = values[i];
+        
         cells[i].addEventListener('click', function() {
           if (this.classList.contains('active')) {
             this.classList.remove('active');
@@ -79,6 +96,15 @@
           }
         });
       }
+      
+      function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      }
   </script>
-  
-  </body>
+</body>
+</html>
