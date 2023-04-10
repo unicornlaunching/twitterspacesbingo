@@ -72,39 +72,38 @@
   </table>
 
   <script>
-var cells =   
-    document.querySelectorAll('td');
-    var values = ['Danologue', 'IIWII', 'Ally', 'Talking Over ERich', 'Peter Waxes Philosphical', 'Well Im Broken', 'Matios Joins', 'Regulating AI', 'Overton Window'];
-    
-      cells.forEach(cell => {
+    var cells = document.querySelectorAll('td');
+    var values = ['Danologue', 'IIWII', 'Ally', 'Talking Over ERich', 'Peter Waxes Philosphical', 'Well Im Broken', 'Matios Joins', 'Regulating AI', 'Overton Window', 'Random Value 1', 'Random Value 2', 'Random Value 3', 'Random Value 4', 'Random Value 5', 'Random Value 6', 'Random Value 7', 'Random Value 8', 'Random Value 9', 'Random Value 10', 'Random Value 11'];
+
+    cells.forEach(cell => {
       cell.addEventListener('click', () => {
         cell.classList.toggle('pressed');
       });
     });
-    
-    
-shuffle(values);
-      
-for (var i = 0; i < cells.length; i++) {
-  cells[i].textContent = values[i];
-        
-        cells[i].addEventListener('click', function() {
-          if (this.classList.contains('active')) {
-            this.classList.remove('active');
-          } else {
-            this.classList.add('active');
-          }
-        });
-      }
-      
-      function shuffle(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var temp = array[i];
-          array[i] = array[j];
-          array[j] = temp;
+
+    var shuffledValues = shuffle(values).slice(0, 9); // get a random subset of 9 values
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].textContent = shuffledValues[i];
+
+      cells[i].addEventListener('click', function() {
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          this.classList.add('active');
         }
+      });
+    }
+
+    function shuffle(array) {
+      var currentIndex = array.length, randomIndex;
+      while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
       }
+      return array;
+    }
   </script>
 </body>
 </html>
