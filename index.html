@@ -1,25 +1,26 @@
+<!DOCTYPE html>
 <html>
   <head>
-    
+    <meta charset="UTF-8">
+    <title>Bingo Generator</title>
     <style>
-      
-                body {
+      body {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
         text-align: center;
         background-color: #111;
-        height:500px
+        height:500px;
       }
-      
+
       table {
         width: 100%;
-        height: 100%;
+        height: 80%;
         table-layout: fixed;
         border-collapse: separate;
         border-spacing: 5px;
       }
-      
+
       td {
         width: 33.33%;
         height: 33.33%;
@@ -33,77 +34,47 @@
         box-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0;
         transition: all 0.2s ease-in-out;
       }
-      
+
       td.active {
         background-color: #0f0;
         box-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0, 0px 0px 40px #0f0, 0px 0px 70px #0f0;
       }
-
-
-
-      
-      
     </style>
-    
-    
   </head>
 
+  <body>
+    <div class="htwo">
+      <center><h2><font color="pink">The Syndicate - Bingo</font></h2></center>
+      
+            <label for="values"><font color="white">Enter up to 20 Bingo Card Options, separated by commas:</label></font>
+      <input type="text" id="values" name="values">
+      <button id="generate-btn">Generate</button><br><br><br>
+    </div>
 
-<body>
-  <div class="htwo">
-    <center><h2><font color="pink"><a href="index2.html">The Syndicate - Bingo</font></h2></center></a>
-  </div>
-  <table>
-    <tr>
-      <td id="cell1"></td>
-      <td id="cell2"></td>
-      <td id="cell3"></td>
-    </tr>
-    <tr>
-      <td id="cell4"></td>
-      <td id="cell5"></td>
-      <td id="cell6"></td>
-    </tr>
-    <tr>
-      <td id="cell7"></td>
-      <td id="cell8"></td>
-      <td id="cell9"></td>
-    </tr>
-  </table>
+    <div>
 
-  <script>
-    var cells = document.querySelectorAll('td');
-    var values = ['Danologue', 'IIWII', 'Ally', 'Talking Over ERich', 'Peter Waxes Philosphical', 'Well Im Broken', 'Matios Joins', 'Regulating AI', 'Overton Window', 'Python', 'Right!?', 'Evil Manish', 'Alli Bio Fact', 'Unneccessary Bye', 'Zach Disagrees', 'ERich Introduces Friend', 'Crow Crows', 'Dan Club', 'Alaskoshi Alaskoshis', 'Ello Aw Waw Wii', 'Room Rugged'];
+    </div>
 
-    cells.forEach(cell => {
-      cell.addEventListener('click', () => {
-        cell.classList.toggle('pressed');
-      });
-    });
+    <table>
+      <tr>
+        <td id="cell1"></td>
+        <td id="cell2"></td>
+        <td id="cell3"></td>
+      </tr>
+      <tr>
+        <td id="cell4"></td>
+        <td id="cell5"></td>
+        <td id="cell6"></td>
+      </tr>
+      <tr>
+        <td id="cell7"></td>
+        <td id="cell8"></td>
+        <td id="cell9"></td>
+      </tr>
+    </table>
 
-    var shuffledValues = shuffle(values).slice(0, 9); // get a random subset of 9 values
-    for (var i = 0; i < cells.length; i++) {
-      cells[i].textContent = shuffledValues[i];
+    	<script src="script.js"></script>
 
-      cells[i].addEventListener('click', function() {
-        if (this.classList.contains('active')) {
-          this.classList.remove('active');
-        } else {
-          this.classList.add('active');
-        }
-      });
-    }
-
-    function shuffle(array) {
-      var currentIndex = array.length, randomIndex;
-      while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]];
-      }
-      return array;
-    }
-  </script>
-</body>
+    
+  </body>
 </html>
