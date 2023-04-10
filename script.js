@@ -16,10 +16,18 @@ function populateCells(values) {
   for (let i = 0; i < cells.length; i++) {
     cells[i].textContent = values[i];
 
-    cells[i].addEventListener('click', function () {
-      this.classList.toggle('active');
-    });
-  }
+//    cells[i].addEventListener('click', function () {
+//      this.classList.toggle('active');
+//    });
+//  }
+ 
+      cells[i].addEventListener('click', function() {
+    if (this.classList.contains('active')) {
+      this.classList.remove('active');
+    } else {
+      this.classList.add('active');
+    }
+  });
 }
 
 // Listen for user input and generate table on button click
@@ -49,3 +57,15 @@ function shuffle(array) {
 
 // Shuffle default values array on page load
 shuffle(defaultValues);
+
+
+
+
+
+
+
+
+
+
+
+
