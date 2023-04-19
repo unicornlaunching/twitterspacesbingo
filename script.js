@@ -27,7 +27,7 @@ document.querySelector('button').addEventListener('click', () => {
   const userInput = input.value.trim().split(',').map(value => value.trim());
 
   // Use default values if user input is empty or invalid
-  const values = userInput.length > 0 && userInput[0] !== '' ? getRandomValues(userInput, 9) : getRandomValues(defaultValues, 9);
+  const values = userInput.length > 0 && userInput[0] !== '' ? getRandomValues(userInput, 30) : getRandomValues(defaultValues, 30);
 
   populateCells(values);
 });
