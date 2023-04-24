@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TwitterSpaces Bingo Card Generator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #111;
+        height: 500px;
+      }
+
+      table {
+        width: 100%;
+        height: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 5px;
+      }
+
+      td {
+        width: 20%;
+        height: 20%;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #333;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      td.active {
+        background-color: #0f0;
+        box-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0, 0px 0px 40px #0f0, 0px 0px 70px #0f0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="htwo" height="30%">
+      <center><h2><font color="pink">TwitterSpaces Bingo Card Generator</font></h2></center>
+      
+      <label for="values"><h2><font color="white">Enter up to 20 Bingo Card Options, separated by commas:</h2></label></font>
+      
+      <input type="text" id="values" name="values" style="width: 300px; height: 40px;">
+
+      
+      <!-- <input type="text" id="values" name="values"> -->
+      
+      
+      <button id="generate-btn">Generate</button><br><br>
+      <h5><font color="white">Sample Bingo Card Options: Danologue, IIWII, Talking Over ERich, Peter Waxes Philosphical, Well I'm Broken, Matios Joins, Regulating AI, Overton Window, Python, Riiiight, Evil Manish, Alli Bio Fact, Unneccessary Bye, Zach Disagrees, ERich Introduces Friend, Crow Crows, Dan Club, Alaskoshi Alaskoshis, Ello Aw Waw Wii, Room Rugged</h5></font>
+     
+      <br>
+      <br>
+    </div>
+
+    <div>
+
+    </div>
+
+    <table>
+      <tr>
+        <td id="cell1">print</td>
+        <td id="cell2">pip</td>
+        <td id="cell3">from</td>                   
+      </tr>
+      <tr>
+        <td id="cell6">import</td>
+        <td id="cell7">=</td>
+        <td id="cell8">""</td>
+      </tr>
+      <tr>
+        <td id="cell11">[]</td>
+        <td id="cell12">()</td>
+        <td id="cell13">{}</td>
+      </tr>
+      <tr>
+        <td id="cell11">this.that</td>
+        <td id="cell12">this(that)</td>
+        <td id="cell13">from this to that:</td>
+      </tr>
+  </table>
+
+    	<script src="script.js"></script>
+
+    
+  </body>
+</html>
